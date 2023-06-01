@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+    font-family: 'roboto', sans-serif;
+    position: relative;
+    width: 100vw;
+}
+/* Navbar */
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 0.2vw;
+    background-color:  #fff;
+}
+.navbar > .toggle-btn{
+    width: 18px;
+    height: 10px;
+    cursor: pointer;
+    padding: 1px 2px;
+    position: relative;
+    margin-left: 15px;
+}
+.navbar > .toggle-btn > span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #979797;
+}
+.toggle-btn > span:nth-child(1){
+    top: 0;
+}
+.toggle-btn > span:nth-child(2){
+    top: 100%;
+}
+.navbar .logo{
+    height: 25px;
+    margin-left: 25px;
+    margin-top: -8px;
+}
+.navbar .search-box{
+    position: absolute;
+    top: 10px;
+    display: flex;
+    width: 100%;
+    height: 35px;
+    max-width: 550px;
+    margin-left: 25%;
+}
+#search-input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dbdbdb;
+    padding: 0 15px;
+    font-size: medium;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background: #fff;
+}
+#search-btn{ 
+    width: 15%;
+    height: 105%;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    cursor: pointer; 
+    border-radius: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px; 
+    background: #f0f0f0;
+    border-left: none;
+} 
+#search-btn img{
+    height: 50%;
+}
+.nav-right{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 90%;
+    height: 35px;
+    width: 120px;
+}
+.nav-right > img{
+    height: 80%;
+    cursor: pointer;
+}
+.userDp{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.userDp > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SideBar */
+.side-bar{
+    position: fixed;
+    top: 70px;
+    width: 15%;
+    min-width: 200px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+}
+.side-bar > .link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #242424;
+    font-size: medium;
+}
+.link > img{
+    height: 25px;
+    margin-right: 20px;
+}
+hr{
+    margin-top: 15px;
+}
+.link:hover{
+    background: rgba(0, 0, 0, 0.1);
+}
+.active{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* filters */
+.filter-container{
+    position: fixed;
+    top: 60px;
+    left: 200px;
+    width: 85%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #fff;
+    padding: 0 15px;
+    margin-left: 15px;
+}
+.filter-container::-webkit-scrollbar{
+    display: none;
+}
+
+.filter-container > .filter-btn{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    display: flex;
+}
+
+
+/* main Container */
+#container{
+    position: absolute;
+    z-index: -1000;
+    width: 75%;
+    /* top: 150px; */
+    margin-top: 120px;
+    margin-left: 250px;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap: 10px 50px;
+    overflow-x: hidden;
+    padding: 20px;
+}
+#container > .videoContainer{
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#container > .videoContainer > img{
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+.videoContainer img:hover{
+    border: none;
+    cursor: pointer;
+}
+.videoContainer > .duration{
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 85%;
+    background-color: #242424;
+    color: white;
+    font-weight: 100;
+    padding: 2px;
+    opacity: 85%;
+}
+.videoContainer > .content{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+}
+.content > .channelIcon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.title{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.channel-title{
+    margin: 2px 0;
+    color: #979797;
+    font-size: 14px;
+}
+.views{
+    margin: 2px 0;
+    color: #979797;
+    font-size: 14px;
+}
+

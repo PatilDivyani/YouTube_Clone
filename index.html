@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./icons8-youtube-48.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar">
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <img class="logo" src="./img/logo.PNG" alt="logo" />
+      <div class="search-box">
+        <input id="search-input" type="text" placeholder="Search" />
+        <button id="search-btn">
+          <img src="./img/search.PNG" alt="" />
+        </button>
+      </div>
+      <div class="nav-right">
+        <img src="./img/video.PNG" class="icon" alt="" />
+        <img src="./img/bell.PNG" class="icon" alt="" />
+        <div class="userDp">
+          <img src="./maxresdefault.jpg" class="icon" alt="" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- SideBar -->
+    <div class="side-bar">
+      <a href="#" class="link active"
+        ><img src="./img/home.PNG" alt="#" />Home</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/explore.PNG" alt="#" />Explore</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/subscription.PNG" alt="" />Subscriptions</a
+      >
+      <hr />
+      <a href="#" class="link"
+        ><img src="./img/library.PNG" alt="#" />Library</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/history.PNG" alt="#" />History</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/your-video.PNG" alt="" />Your Videos</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/watch-later.PNG" alt="#" />Watch Later</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/liked video.PNG" alt="#" />Liked Videos</a
+      >
+      <a href="#" class="link"
+        ><img src="./img/show more.PNG" alt="" />Show more</a
+      >
+    </div>
+
+    <!-- Filters btn -->
+    <div class="filter-container">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">CSS</button>
+      <button class="filter-btn">Web Development</button>
+      <button class="filter-btn">Python</button>
+      <button class="filter-btn">Entertainment</button>
+      <button class="filter-btn">Javascript</button>
+      <button class="filter-btn">Machine Learning</button>
+      <button class="filter-btn">HTML</button>
+    </div>
+
+    <div id="container">
+      <!-- <div class="videoContainer">
+        <img class="thumbnail-img" src="./maxresdefault.jpg" />
+        <b class="duration">1:20</b>
+        <div class="content">
+          <img src="./img/explore.PNG" alt="" class="channelIcon" />
+          <div class="videoInfo">
+            <h4 class="title">title</h4>
+            <p class="channel-title">channelTitle</p>
+            <p class="views">"views"</p>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
