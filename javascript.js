@@ -121,7 +121,7 @@ function navigateToClickedVideo(videoid) {
     if(videoid){
         document.cookie = `video_id=${videoid};path=${path}`;
         let linkElement = document.createElement("a");
-        linkElement.href = "https://github.com/PatilDivyani/YouTube_Clone/blob/main/index.html";
+        linkElement.href = "https://github.com/PatilDivyani/YouTube_Clone/blob/main/video.html";
         linkElement.target="_blank";
         linkElement.click();
     }
