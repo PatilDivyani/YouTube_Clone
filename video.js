@@ -1,6 +1,7 @@
 let cookieString = document.cookie;
 let videoId =  cookieString.split("=")[1];
-const apiKey = localStorage.getItem("api_key")
+// const apiKey = localStorage.getItem("apiKey")
+const apiKey = "AIzaSyDP3jg1nKpBhaz1sYniA9pdEItddT5z8O0";
 
 let firstScript = document.getElementsByTagName("script")[0] ;
 
@@ -23,7 +24,7 @@ function onLoadScript() {
   }
 }
 
-const statsContainer = document.getElementsByClassName("video-details")[0] ;
+const statsContainer = document.getElementsByClassName("videoContent")[0] ;
 
 async function extractVideoDetails(videoId){ 
     let endpoint = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${apiKey}`;
@@ -47,28 +48,30 @@ async function  fetchStats(videoId){
         const response = await fetch(endpoint);
         const result = await response.json();
         const item = result.items[0] ;
-        const title = document.getElementById("title");
-        title.innerText = item.snippet.title ;
-        title.style.color = "white";
-        title.style.fontSize = "20px"
-
+        const title = document.querySelector(".title");
+        title.innerHTML = item.snippet.title ;
+        // title.style.color = "black";
+        // title.style.fontSize = "20px"
         
         statsContainer.innerHTML = `
-        <div class="profile">
-                <img src="https://i.ytimg.com/vi/D-qj0L68RhQ/default.jpg" class="channel-logo" alt="">
-                <div class="owner-details">
-                    <span style="color: white ">${item.snippet.channelTitle}</span>
-                    <span>20 subscribers</span>
-                </div>
-        </div>
+            <img src="${item.snippet.thumbnails.default.url}" alt="" class="channelIcon" />
+            <div class="video-details"> 
+                <h3 class="channel-title">${item.snippet.channelTitle}</h3>
+                <p class="views">157M subscribers</p>    
+            </div>
+            <button class="subscribe">Subscribe</button>
         <div class="stats">
             <div class="like-container">
                 <div class="like">
-                    <span class="material-icons">thumb_up</span>
-                    <span>${item.statistics.likeCount}</span>
+                    <span class="material-icons">
+                    <img src="./img/thumbs-up.png" alt="up">
+                    </span>
+                    <span>${(item.statistics.likeCount)/1000 + "K"}</span>
                 </div>
-                <div class="like">
-                    <span class="material-icons">thumb_down</span>
+                <div class="dis-like">
+                    <span class="material-icons">
+                    <img src="./img/thumbs-down.png" alt="up">
+                    </span>
                 </div>
             </div>
             <div class="comments-container">
@@ -103,11 +106,15 @@ function renderComments(commentsList) {
                     <p>${topLevelComment.snippet.textOriginal}</p>
                     <div style="display: flex; gap: 20px">
                         <div class="like">
-                            <span class="material-icons">thumb_up</span>
+                            <span class="material-icons">
+                                <img src="./img/thumbs-up.png" alt="up">
+                            </span>
                             <span>${topLevelComment.snippet.likeCount}</span>
                         </div>
                         <div class="like">
-                            <span class="material-icons">thumb_down</span>
+                            <span class="material-icons">
+                            <img src="./img/thumbs-down.png" alt="up">
+                            </span>
                         </div>
                         <button class="reply" onclick="loadComments(this)" data-comment-id="${topLevelComment.id}">
                             Replies(${comment.snippet.totalReplyCount})
@@ -141,11 +148,15 @@ async function loadComments(element){
                             <p>${replyComment.snippet.textOriginal}</p>
                             <div class="options">
                                 <div class="like">
-                                    <span class="material-icons">thumb_up</span>
+                                    <span class="material-icons">
+                                    <img src="./img/thumbs-up.png" alt="up">
+                                    </span>
                                     <span>${replyComment.snippet.likeCount}</span>
                                 </div>
                                 <div class="like">
-                                    <span class="material-icons">thumb_down</span>
+                                    <span class="material-icons">
+                                    <img src="./img/thumbs-down.png" alt="up">
+                                    </span>
                                 </div>
                             </div>
                     `;

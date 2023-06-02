@@ -1,5 +1,6 @@
-//"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=devi&key=AIzaSyBC9N7ib0CThl-d5Iwnz0tDjVB2iUTh4-U";
+//"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=Shriram&key=AIzaSyBC9N7ib0CThl-d5Iwnz0tDjVB2iUTh4-U";
 
+//https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyBC9N7ib0CThl-d5Iwnz0tDjVB2iUTh4-U
 
 const apiKey = "AIzaSyDP3jg1nKpBhaz1sYniA9pdEItddT5z8O0";
 const searchInput = document.getElementById("search-input");
@@ -11,6 +12,33 @@ button.addEventListener("click", ()=>{
     //fetch the list of videos
     fetchVideos(searchValue);
 })
+
+async function byDefaultFetch(){
+
+    let endpoint = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyBC9N7ib0CThl-d5Iwnz0tDjVB2iUTh4-U`;
+   
+    try{
+        
+    let response = await fetch(endpoint);
+    let results = await response.json();
+    for(let i = 0; i < results.items.length; i++){
+        let videoItem = results.items[i];
+        let videoStats = await fetchStats(videoItem.id.videoId);
+        //adding terms in array
+        if(videoStats.items.length>0){
+        videoItem.videoStats = videoStats.items[0].statistics;
+        videoItem.duration = videoStats.items[0].contentDetails.duration;
+        }
+    }
+    //show thumnails
+    showThumbnails(results.items)
+    }
+    catch (error) {
+        console.log("Error : ", error);
+    }
+}
+
+    byDefaultFetch();
 
 async function fetchVideos(searchValue) {
     //calling api

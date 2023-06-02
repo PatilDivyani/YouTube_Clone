@@ -10,8 +10,9 @@
       href="./icons8-youtube-48.png"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./video.css" />
-    <link rel="stylesheet" href="./style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,9 +21,8 @@
     />
   </head>
   <body>
-
-     <!-- NavBar -->
-     <nav class="navbar">
+    <!-- NavBar -->
+    <nav class="navbar">
       <div class="toggle-btn">
         <span></span>
         <span></span>
@@ -46,45 +46,48 @@
 
     <!-- Main Section -->
     <section class="root-container">
-      <section class="root-container">
-        <div>
-            <div id="play-video"></div>
-            <section>
-                <p id="title"></p>
-                <div class="video-details">
-                </div>
-            </section>
-        </div>
-        <div id="comments-container">
-            <div class="comment">
-                
-            </div>
-
-        </div>
-    </section>
-    </section>
-    
-    <!-- <div>
-        <div id="play-video">
-          <video src="" controls></video>
-        </div>
-
-        <div class="videoContent">
-          <h3 class="title">title</h3>
-          <img src="./img/explore.PNG" alt="" class="channelIcon" />
-          <div class="video-details">
-             <h3 class="channel-title">channelTitle</h3>
-            <p class="views">157M subscribers</p>
-            <button class="subscribe">Subscribe</button> 
-          </div>
-        </div>
-
+      <div id="play-video">
+        <img src="./maxresdefaul.jpg" alt="" />
       </div>
-      <div id="comments-container">
-        <div class="comments">
+      <div class="Text">
+        <h3 class="title"></h3>
+        <div class="videoContent">
+
+          <!-- <img src="./img/explore.PNG" alt="" class="channelIcon" />
+          <div class="video-details">
+            <h3 class="channel-title">Youtube API</h3>
+            <p class="views">157M subscribers</p>   
+          </div>
+          <button class="subscribe">Subscribe</button>
+          <div class="stats">
+            <div class="like-container">
+                <div class="like">
+                  <span class="material-icons">
+                    <img src="./img/thumbs-up.png" alt="up">
+                  </span>
+                  <span>11K</span>
+                </div>
+                <div class="dis-like">
+                  <span class="material-icons">
+                    <img src="./img/thumbs-down.png" alt="dn">
+                  </span>
+                </div>
+            </div>
             
+          </div> -->
+
         </div>
-      </div> -->
+      </div class="Text">
+      
+      <div id="comments-container">
+        <!-- <div class="comment">
+          <div class="comments-container">
+            <span class="material-icons">comment</span>
+            <span>${item.statistics.commentCount}</span>
+          </div>
+        </div> -->
+      </div>
+    </section>
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./video.js"></script>
